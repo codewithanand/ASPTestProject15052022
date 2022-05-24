@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace _15052022
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class User : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            if(Session["user"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
-            
+
         }
     }
 }

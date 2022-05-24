@@ -45,7 +45,7 @@ namespace _15052022
                 activationAlertBox.Visible = false;
                 con.Close();
                 con.Open();
-                String selectQry = "select email from [userinfo] where email='" + email.Text.ToString() + "' and pass='" + pass.Text.ToString() + "'";
+                String selectQry = "select user_id from [userinfo] where email='" + email.Text.ToString() + "' and pass='" + MyEncrypt(pass.Text.ToString()) + "'";
                 SqlCommand selectCmd = new SqlCommand(selectQry, con);
                 SqlDataReader selectReader = selectCmd.ExecuteReader();
                 if (selectReader.Read())
