@@ -37,7 +37,7 @@ namespace _15052022
             if(con.State == ConnectionState.Closed)
                 con.Open();
 
-            string checkActiveQry = "select user_id from [userinfo] where email='" + email.Text.ToString() + "' and pass='" + MyEncrypt(pass.Text.ToString()) + "' and is_active=1";
+            string checkActiveQry = "select user_id from [userinfo] where email='" + email.Text.ToString() + "' and is_active=1";
             SqlCommand checkActiveCmd = new SqlCommand(checkActiveQry, con);
             SqlDataReader checkActiveReader = checkActiveCmd.ExecuteReader();
             if (checkActiveReader.HasRows)

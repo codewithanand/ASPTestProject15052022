@@ -44,15 +44,35 @@ namespace _15052022
             {
                 con.Close();
                 emailErrAlertBox.Visible = false;
+
+                // Generate random activation code
                 Random rndm = new Random();
                 int myRandomNo = rndm.Next(10000000, 99999999);
                 string activation_code = myRandomNo.ToString();
 
+                // Fetch gender
+                string gender = "";
+                if (genMale.Checked)
+                {
+                    gender = "male";
+                }
+                if (genFemale.Checked)
+                {
+                    gender = "female";
+                }
+
+                // Fetch caste
+                string caste = "";
+                caste = casteList.SelectedValue.ToString();
+
+
                 con.Open();
-                String insertQry = "insert into [userinfo] (first_name, last_name, email, pass, activation_code, is_active) values (@fname, @lname, @email, @pass, @activationcode, @isactive)";
+                String insertQry = "insert into [userinfo] (first_name, last_name, gender, caste, email, pass, activation_code, is_active) values (@fname, @lname, @gender, @caste, @email, @pass, @activationcode, @isactive)";
                 SqlCommand insertCmd = new SqlCommand(insertQry, con);
                 insertCmd.Parameters.AddWithValue("@fname", fname.Text.ToString());
                 insertCmd.Parameters.AddWithValue("@lname", lname.Text.ToString());
+                insertCmd.Parameters.AddWithValue("@gender", gender);
+                insertCmd.Parameters.AddWithValue("@caste", caste);
                 insertCmd.Parameters.AddWithValue("@email", email.Text.ToString());
                 insertCmd.Parameters.AddWithValue("@pass", MyEncrypt(pass.Text.ToString()) );
                 insertCmd.Parameters.AddWithValue("@activationcode", activation_code);

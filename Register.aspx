@@ -16,9 +16,9 @@
         <h1 class="mb-4">Registration</h1>
         <div class="col-md-6">
             <div class="mb-3 row">
-                <asp:Label CssClass="col-sm-4 col-form-label" ID="Label1" runat="server" Text="First Name"></asp:Label></td>
+                <asp:Label CssClass="col-sm-4 col-form-label" ID="Label1" runat="server" Text="First Name"></asp:Label>
                 <div class="col-sm-8">
-                    <asp:TextBox CssClass="form-control" ID="fname" runat="server" placeholder="John"></asp:TextBox></td>
+                    <asp:TextBox CssClass="form-control" ID="fname" runat="server" placeholder="John"></asp:TextBox>
                 </div>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Required" ControlToValidate="fname" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
@@ -28,6 +28,27 @@
                     <asp:TextBox CssClass="form-control" ID="lname" runat="server" placeholder="Doe"></asp:TextBox>
                 </div>
             </div>
+            <div class="mb-3 row">
+                <asp:Label CssClass="col-sm-4 col-form-label" ID="Label6" runat="server" Text="Gender"></asp:Label>
+                <div class="col-md-4">
+                    <asp:RadioButton CssClass="" ID="genMale" runat="server" GroupName="gender" Text=" Male" />
+                </div>
+                <div class="col-md-4">
+                    <asp:RadioButton CssClass="" ID="genFemale" runat="server" GroupName="gender" Text=" Female" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <asp:Label CssClass="col-sm-4 col-form-label" ID="Label7" runat="server" Text="Caste"></asp:Label>
+                <div class="col-md-8">
+                    <asp:DropDownList CssClass="form-select" ID="casteList" runat="server">
+                        <asp:ListItem Selected="False">Please select</asp:ListItem>
+                        <asp:ListItem>SC</asp:ListItem>
+                        <asp:ListItem>ST</asp:ListItem>
+                        <asp:ListItem>OBC</asp:ListItem>
+                        <asp:ListItem>GEN</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+            </div> 
             <div class="mb-3 row">
                 <asp:Label CssClass="col-sm-4 col-form-label" ID="Label3" runat="server" Text="Email Address"></asp:Label>
                 <div class="col-sm-8">

@@ -30,12 +30,17 @@
                     <asp:TextBox CssClass="form-control" ID="pass" runat="server" TextMode="Password"></asp:TextBox>
                 </div>
             </div>
-            <div class="mb-3 row">
-                <div class="col-form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Remember me
-                    </label>
+            <div class="mb-3 row justify-content-between">
+                <div class="col">
+                    <div class="col-form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <asp:HyperLink CssClass="text-primary" ID="HyperLink1" runat="server" NavigateUrl="ForgotPassword.aspx">Forgot Password</asp:HyperLink>
                 </div>
             </div>
             <asp:Button CssClass="btn btn-primary" ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" />
