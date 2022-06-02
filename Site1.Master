@@ -52,7 +52,7 @@
                         <asp:HyperLink CssClass="btn btn-outline-light me-3" ID="HyperLink2" runat="server" NavigateUrl="~/Register.aspx">Register</asp:HyperLink>
                     </asp:PlaceHolder>
                     <asp:PlaceHolder ID="loggedIn" runat="server">
-                        <asp:Label ID="navUserName" runat="server" Text="UserName"></asp:Label>
+                        <asp:HyperLink CssClass="link-light me-3" ID="HyperLink4" runat="server" NavigateUrl="~/MyProfile.aspx"><%= HttpContext.Current.Session["first_name"] %></asp:HyperLink>
                         <asp:HyperLink CssClass="btn btn-outline-light me-3" ID="HyperLink3" runat="server" NavigateUrl="~/Logout.aspx">Logout</asp:HyperLink>
                     </asp:PlaceHolder>
                 </div>

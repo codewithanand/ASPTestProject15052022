@@ -21,9 +21,12 @@ namespace _15052022
         protected void Page_Load(object sender, EventArgs e)
         {
             emailErrAlertBox.Visible = false;
-            if (Session["user"] != null)
+            if (!IsPostBack)
             {
-                Response.Redirect("Home.aspx");
+                if (Session["user"] != null)
+                {
+                    Response.Redirect("MyProfile.aspx");
+                }
             }
         }
 
