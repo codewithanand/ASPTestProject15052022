@@ -30,8 +30,8 @@
                     <asp:TextBox CssClass="form-control" ID="pass" runat="server" TextMode="Password"></asp:TextBox>
                 </div>
             </div>
-            <div class="mb-3 row justify-content-between">
-                <div class="col">
+            <div class="row justify-content-between mb-3 ">
+                <div class="col-4">
                     <div class="col-form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
@@ -39,7 +39,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-4">
                     <asp:HyperLink CssClass="text-primary" ID="HyperLink1" runat="server" NavigateUrl="ForgotPassword.aspx">Forgot Password</asp:HyperLink>
                 </div>
             </div>

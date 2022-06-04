@@ -20,13 +20,6 @@ namespace _15052022
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                if(Session["user"] == null)
-                {
-                    Response.Redirect("Login.aspx");
-                }
-            }
             emailEntry.Visible = true;
             enterOTP.Visible = false;
             changePassword.Visible = false;

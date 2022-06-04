@@ -70,8 +70,10 @@
   <ItemGroup>
     <Content Include="ActivateAccount.aspx" />
     <Content Include="Admin\AdminLogin.aspx" />
+    <Content Include="Admin\AdminLogout.aspx" />
     <Content Include="Admin\css\sb-admin-2.css" />
     <Content Include="Admin\css\sb-admin-2.min.css" />
+    <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\img\undraw_posting_photo.svg" />
     <Content Include="Admin\img\undraw_profile.svg" />
     <Content Include="Admin\img\undraw_profile_1.svg" />
@@ -84,6 +86,7 @@
     <Content Include="Admin\js\demo\datatables-demo.js" />
     <Content Include="Admin\js\sb-admin-2.js" />
     <Content Include="Admin\js\sb-admin-2.min.js" />
+    <Content Include="Admin\User.aspx" />
     <Content Include="Admin\vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Admin\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Admin\vendor\bootstrap\js\bootstrap.js" />
@@ -1754,12 +1757,14 @@
     <Content Include="Admin\vendor\jquery\jquery.slim.js" />
     <Content Include="Admin\vendor\jquery\jquery.slim.min.js" />
     <Content Include="ChangePassword.aspx" />
+    <Content Include="css\carousel.css" />
     <Content Include="EditProfile.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="img\bee_logo.png" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="MyCaptcha.aspx" />
     <Content Include="MyProfile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="User.aspx" />
@@ -1779,6 +1784,34 @@
     </Compile>
     <Compile Include="Admin\AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminLogout.aspx.cs">
+      <DependentUpon>AdminLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminLogout.aspx.designer.cs">
+      <DependentUpon>AdminLogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMasterPage.Master.cs">
+      <DependentUpon>AdminMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMasterPage.Master.designer.cs">
+      <DependentUpon>AdminMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
@@ -1821,6 +1854,13 @@
     </Compile>
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyCaptcha.aspx.cs">
+      <DependentUpon>MyCaptcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyCaptcha.aspx.designer.cs">
+      <DependentUpon>MyCaptcha.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyProfile.aspx.cs">
       <DependentUpon>MyProfile.aspx</DependentUpon>
@@ -2025,6 +2065,7 @@
     <Content Include="Admin\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Admin\vendor\jquery\jquery.min.map" />
     <Content Include="Admin\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Admin\AdminMasterPage.Master" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">

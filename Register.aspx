@@ -6,12 +6,21 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <asp:PlaceHolder ID="emailErrAlertBox" runat="server">
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Warning!</strong> An user is already registered with this email address.
+            <strong>Error!</strong> A user is already registered with this email address.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </asp:PlaceHolder>
+
+    <asp:PlaceHolder ID="captchaErrMsg" runat="server">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Incorrect Captcha!</strong> Please enter correct captcha.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </asp:PlaceHolder>
+
     <div class="container my-5">
         <h1 class="mb-4">Registration</h1>
         <div class="col-md-6">
@@ -31,10 +40,10 @@
             <div class="mb-3 row">
                 <asp:Label CssClass="col-sm-4 col-form-label" ID="Label6" runat="server" Text="Gender"></asp:Label>
                 <div class="col-md-4">
-                    <asp:RadioButton CssClass="" ID="genMale" runat="server" GroupName="gender" Text=" Male" />
+                    <asp:RadioButton CssClass="" ID="genMale" runat="server" GroupName="gender" Text="&nbsp; Male" />
                 </div>
                 <div class="col-md-4">
-                    <asp:RadioButton CssClass="" ID="genFemale" runat="server" GroupName="gender" Text=" Female" />
+                    <asp:RadioButton CssClass="" ID="genFemale" runat="server" GroupName="gender" Text="&nbsp; Female" />
                 </div>
             </div>
             <div class="mb-3 row">
@@ -72,7 +81,19 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*Required" ControlToValidate="cpass" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Password does not match" ControlToCompare="pass" ControlToValidate="cpass" ForeColor="Red"></asp:CompareValidator>
             </div>
-            <asp:Label CssClass="col-sm-4 col-form-label" ID="errMsgLbl" runat="server" Text="" ForeColor="Red"></asp:Label>
+            <div class="mb-3 row">
+                <asp:Label CssClass="col-sm-4 col-form-label" ID="Label8" runat="server" Text="Captcha"></asp:Label>
+                <div class="col-sm-8">
+                    <asp:TextBox CssClass="form-control" ID="captchCode" runat="server" placeholder="Enter Captcha Code"></asp:TextBox>
+                </div>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*Required" ControlToValidate="captchCode" ForeColor="Red"></asp:RequiredFieldValidator>
+            </div>
+            <div class="mb-3 row">
+                <asp:Label CssClass="col-sm-4 col-form-label" ID="Label9" runat="server" Text=""></asp:Label>
+                <div class="col-sm-8">
+                    <asp:Image ID="captchaImage" CssClass="" Height="40px" Width="150px" ImageUrl="~/MyCaptcha.aspx" runat="server" />
+                </div>
+            </div>
             <asp:Button ID="registerBtn" runat="server" Text="Register" CssClass="btn btn-primary" OnClick="registerBtn_Click" />
         </div>
     </div>
